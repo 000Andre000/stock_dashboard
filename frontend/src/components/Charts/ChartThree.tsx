@@ -59,7 +59,7 @@ const ChartThree: React.FC = () => {
   // Fetch stock data from backend
   useEffect(() => {
     axios
-      .get('http://localhost:8080/api/stocks')
+      .get('https://stocks-dashboard.up.railway.app/api/stocks')
       .then((response) => {
         const stockData = response.data.stocks;
 

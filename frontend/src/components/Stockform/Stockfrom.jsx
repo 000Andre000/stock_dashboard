@@ -28,7 +28,7 @@ const StockForm = ({initialData = {} }) => {
     
         // Send the form data to the backend via a POST request
         axios
-          .post("http://localhost:8080/api/stocks", formData)  // Adjust the URL if necessary
+          .post("https://stocks-dashboard.up.railway.app/api/stocks", formData)  // Adjust the URL if necessary
           .then((response) => {
             console.log("Stock added successfully:", response.data);
             toast.success("Stock added successfully!", {

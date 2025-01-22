@@ -23,7 +23,7 @@
 //   // Fetch stocks from backend
 //   useEffect(() => {
 //     axios
-//       .get('http://localhost:8080/api/stocks')
+//       .get('https://stocks-dashboard.up.railway.app/api/stocks')
 //       .then(async (response) => {
 //         const stockData = response.data.stocks;
 //         const mappedStockData = stockData.map((stock) => ({

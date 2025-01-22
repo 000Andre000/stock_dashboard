@@ -14,7 +14,7 @@ const Portfolio = () => {
   // Fetch stocks from backend
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/stocks")
+      .get("https://stocks-dashboard.up.railway.app/api/stocks")
       .then((response) => {
         setStocks(response.data); // Set stocks data
       })
@@ -27,7 +27,7 @@ const Portfolio = () => {
  const onEdit = (stock) => {
   const updatedStock = { ...stock, name: "Updated Stock" }; // For example, updating the name
   axios
-    .put(`http://localhost:8080/api/stocks/${stock.id}`, updatedStock)
+    .put(`https://stocks-dashboard.up.railway.app/api/stocks/${stock.id}`, updatedStock)
     .then((response) => {
       setStocks(stocks.stocks.map((s) => (s.id === stock.id ? response.data : s)));
     })
@@ -39,7 +39,7 @@ const Portfolio = () => {
 // Handle deleting a stock
 const onDelete = (id) => {
   axios
-    .delete(`http://localhost:8080/api/stocks/${id}`)
+    .delete(`https://stocks-dashboard.up.railway.app/api/stocks/${id}`)
     .then(() => {
       setStocks(stocks.stocks.filter((stock) => stock.id !== id));
     })

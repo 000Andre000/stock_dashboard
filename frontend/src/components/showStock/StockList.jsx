@@ -10,7 +10,7 @@ const StockList = () => {
   // Fetch stocks from backend
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/stocks")
+      .get("https://stocks-dashboard.up.railway.app/api/stocks")
       .then((response) => {
         setStocks(response.data); // Set stocks data
       })
@@ -23,7 +23,7 @@ const StockList = () => {
   const handleEditStock = (id, stockToUpdate) => {
     console.log(stockToUpdate);
     axios
-      .put(`http://localhost:8080/api/stocks/${id}`, stockToUpdate) // Send stockToUpdate directly
+      .put(`https://stocks-dashboard.up.railway.app/api/stocks/${id}`, stockToUpdate) // Send stockToUpdate directly
       .then(() => {
         // Handle success
       })
@@ -38,7 +38,7 @@ const StockList = () => {
   // Handle deleting a stock
   const onDelete = (id) => {
     axios
-      .delete(`http://localhost:8080/api/stocks/${id}`)
+      .delete(`https://stocks-dashboard.up.railway.app/api/stocks/${id}`)
       .then(() => {
         setStocks(stocks.stocks.filter((stock) => stock.id !== id));
         window.location.reload();
