@@ -37,5 +37,10 @@
 
 - **Deployed Frontend Application:** [Frontend Application URL](<https://stock-dashboard-cyan.vercel.app>)
 
+## Limitations
+- There is no User Login created so any changes made to the application will be reflected to all using so make sure to undo any changes and please bear with it  
+
 ---
+
+
 
