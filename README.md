@@ -35,7 +35,7 @@
 
 ## Links
 
-- **Deployed Frontend Application:** [Frontend Application URL](`https://stock-dashboard-cyan.vercel.app`)
+- **Deployed Frontend Application:** [Frontend Application URL](<https://stock-dashboard-cyan.vercel.app>)
 
 ---
 
