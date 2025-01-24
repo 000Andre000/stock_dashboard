@@ -44,13 +44,14 @@ const StockList = () => {
     axios
       .delete(`https://stocks-dashboard.up.railway.app/api/stocks/${id}`)
       .then(() => {
-        setStocks((prevStocks) => prevStocks.filter((stock) => stock.id !== id)); // Filter out deleted stock
-        navigate(0); // This reloads the current page
+        setStocks((prevStocks) => prevStocks.filter((stock) => stock.id !== id)); // Filter out the deleted stock
+        navigate('/portfolio'); // Navigate to the /portfolio route
       })
       .catch((error) => {
         console.error("Error deleting stock:", error);
       });
   };
+  
   
   return (
     <div>
