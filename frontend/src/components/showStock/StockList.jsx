@@ -2,9 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import StockTable from '../Stocktable/Stocktable'; // Import your StockTable component
 import Value from "../showValue/Value";
+import { useNavigate } from 'react-router-dom';
+
 
 const StockList = () => {
     const [stocks, setStocks] = useState([]);
+    const navigate = useNavigate();
+
 
 
   // Fetch stocks from backend
@@ -40,14 +44,14 @@ const StockList = () => {
     axios
       .delete(`https://stocks-dashboard.up.railway.app/api/stocks/${id}`)
       .then(() => {
-        setStocks(stocks.stocks.filter((stock) => stock.id !== id));
-        window.location.reload();
+        setStocks((prevStocks) => prevStocks.filter((stock) => stock.id !== id)); // Filter out deleted stock
+        navigate(0); // This reloads the current page
       })
       .catch((error) => {
         console.error("Error deleting stock:", error);
       });
   };
-
+  
   return (
     <div>
       <Value portVal={stocks.portfolioValue}/>
